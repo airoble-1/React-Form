@@ -1,0 +1,31 @@
+What makes forms complex
+- individual input states and overall form state
+- Validation, when to perform ? keystroke, lose focus, submission each have there adv and disadv
+
+Getting user input values 
+- use event listeners with state or ref
+
+Validation
+- A couple states such as Touched and Entered_Value_Valid, form submission handling and custom rendering 
+- refactoring removed alot of the redundant code by using constants that rely on state variables instaad of more state variables
+
+Overall form validity
+- all individual form inputs should be valid before form is valid and vice versa
+
+Code Duplication 
+- Alot of duplication of state logic etc../ b/w the two input fields
+- Best to outsource the code and have it in one place 
+- One solution: Create a custom input component with the logic for validation and touch etc... but the overall form could be handled using props and function passed down
+- another solution: custom hook making the state and other variables as generic as possible to maintain flexibility 
+- return an object or function with generic keys but when used in component aliases with destructing can be useful in providing specific names
+
+Challenge 
+- Switch out the form component and try to apply custom hook to handle various validation states 
+
+Summary 
+- outsource more logic: build individual input components with validation logic, overall form components, more customer hooks which return entirely configured forms or input
+- formik thrid party lib for working with forms that takes care of state logic 
+
+Bonus (useReducer)
+- use cases see prev lecture 
+- similar but seperate states handled seperately can be better handled together using useReducer 
